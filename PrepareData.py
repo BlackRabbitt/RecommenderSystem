@@ -7,6 +7,6 @@ def prepareData(no_of_user, no_of_book):
 	for i in range(no_of_book):
 		rate.append(random.randint(0,5))
 	for i in range(no_of_user):
-		data[i] = rate
+		data[i+1] = rate
 
 	return no_of_user, no_of_book, data

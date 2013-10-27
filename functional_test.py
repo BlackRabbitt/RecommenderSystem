@@ -1,6 +1,6 @@
 #we are going to implement TDD (Test Driven Development) approach for our recommendation problem.
 import unittest
-from Recommender import Clustering
+from Recommender import *
 from PrepareData import prepareData
 
 #Data Preparation Test
@@ -24,5 +24,46 @@ class test_prepareData(unittest.TestCase):
 		self.assertEqual(no_of_user, len(data))
 		self.check_the_max_of_rate(data[3])
 #Clustering Test
-class test_clustering(unittest.TestCase):
-	pass
+class test_kMean(unittest.TestCase):
+	def test_single_cluster(self):
+		cluster_obj = Cluster(1, 5)
+		self.assertIn(5, cluster_obj.user_list)
+
+	def test_multiple_cluster(self):
+		cluster_list = []
+		for i in range(3):
+			cluster_list.append(Cluster(i, i+1))
+		self.assertIn(2, cluster_list[1].user_list)
+
+#test for the initial cluster
+class test_cluster(unittest.TestCase):
+	def test_len_random_generated_user_equals_with_k(self):
+		k = 2
+		self.assertEqual(k, len(initCluster(k, 10)))
+
+	def test_random_generated_user_is_unique(self):		
+		k = 2		
+		no_of_user = 10
+		init_user, cluster = initCluster(k, no_of_user)
+		#check if the user_list is unique or not.
+		self.assertEqual(len(init_user), len(set(init_user)))
+		#check the centroid of each unique initial user
+		centroid_obj = Cluster(1, init_user[1])
+		self.assertEqual(cluster[1].centroid, centroid_obj.centroid)
+
+class test_euclideanDistance(unittest.TestCase):
+	def test_if_distance_is_equal_with_calculated_distance(self):
+		user_centroid = [1, 0, 2, 3, 0]
+		cluster_centroid = [3, 2, 5, 1, 3]
+		#manually calculated and type cast in int.
+		dist = 5
+		distance_between_two_user = euclideanDistance(user_centroid, cluster_centroid)
+		self.assertEqual(dist, int(distance_between_two_user))
+
+	def test_to_find_the_closest_cluster(self):
+		user_centroid = [1, 0, 2, 3, 0]
+		cluster1_centroid = [3, 2, 5, 1, 3]
+		cluster2_centroid = [1, 3, 4, 1, 2]
+		dist1 = 5
+		dist2 = 4 #similar
+		self.assertEqual(dist2, calculateSimilarities(user_centroid, cluster1_centroid, cluster2_centroid))
