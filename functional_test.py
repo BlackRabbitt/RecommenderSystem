@@ -74,3 +74,15 @@ class test_euclideanDistance(unittest.TestCase):
 		
 		close_cluster = calculateSimilarities(user_centroid, cluster, 2)
 		self.assertEqual(min_dist, close_cluster)
+
+	def test_to_add_user_to_its_respective_cluster(self):
+		user_id = 139
+		user_centroid = [1, 0, 2, 3, 0]
+		random_user, cluster = initCluster(2, 10)
+		close_cluster = calculateSimilarities(user_centroid, cluster, 2)
+		self.assertEqual(len(cluster[close_cluster].user_list), 1)
+		addUserToCluster(user_id, cluster, close_cluster)
+		self.assertEqual(len(cluster[close_cluster].user_list), 2)
+		#add again the same user, and the size will not increase.
+		addUserToCluster(user_id, cluster, close_cluster)
+		self.assertEqual(len(cluster[close_cluster].user_list), 2)
