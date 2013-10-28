@@ -1,7 +1,6 @@
 import random, math
 import PrepareData
 user, book, data = PrepareData.prepareData(10, 5)
-
 class Cluster:
 	#datatype for cluster representing single cluster
 	#create a datastructure for cluster
@@ -17,8 +16,7 @@ class Cluster:
 		self.centroid = data[user_id]
 
 #Initialize the centroids for k cluster.
-def initCluster(k, no_of_user):
-	random_user = []*k
+def initCluster(k, no_of_user):	
 	random_user = random.sample(range(1, no_of_user),k)
 	init_cluster = []*k
 	for i in range(k):
@@ -39,5 +37,10 @@ def euclideanDistance(user_centroid, cluster_centroid):
 	E = math.sqrt(summation)
 	return E
 
-def calculateSimilarities(user_centroid, cluster1_centroid, cluster2_centroid):
-	pass
+def calculateSimilarities(user_centroid, cluster, k):
+	dist = {}
+	for i in range(k):
+		dist[i] = euclideanDistance(user_centroid, cluster[i].centroid)
+	#val, closer_cluster = min((val, idx) for (idx, val) in enumerate(dist))
+	closer_cluster = min(dist, key=dist.get)
+	return closer_cluster

@@ -62,8 +62,15 @@ class test_euclideanDistance(unittest.TestCase):
 
 	def test_to_find_the_closest_cluster(self):
 		user_centroid = [1, 0, 2, 3, 0]
-		cluster1_centroid = [3, 2, 5, 1, 3]
-		cluster2_centroid = [1, 3, 4, 1, 2]
-		dist1 = 5
-		dist2 = 4 #similar
-		self.assertEqual(dist2, calculateSimilarities(user_centroid, cluster1_centroid, cluster2_centroid))
+		random_user, cluster = initCluster(2, 3)
+		centroid1 = Cluster(0, random_user[0])
+		centroid2 = Cluster(1, random_user[1])
+		dist1 = euclideanDistance(user_centroid, centroid1.centroid)
+		dist2 = euclideanDistance(user_centroid, centroid2.centroid)
+		if dist1 < dist2:
+			min_dist = 0
+		else:
+			min_dist = 1
+		
+		close_cluster = calculateSimilarities(user_centroid, cluster, 2)
+		self.assertEqual(min_dist, close_cluster)
