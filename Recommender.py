@@ -3,6 +3,8 @@ import PrepareData
 no_of_user = 10
 no_of_book = 5
 user, book, data = PrepareData.prepareData(no_of_user, no_of_book)
+# flag for keeping track of centroid change
+centroid_change_flag = 1 # 1 for centroid changing, 0 for centroid not changing
 class Cluster:
 	# datatype for cluster representing single cluster
 	# create a datastructure for cluster
@@ -72,11 +74,13 @@ def addUserToCluster(user_id, cluster, close_cluster):
 # change the centroid of each cluster so that it is the mean of each cluster
 # return the mean centroid for each cluster
 def changeCentroid(cluster):
+	global centroid_change_flag
 	k = len(cluster)
-	#loop thru each cluster
+	
+	# loop thru each cluster
 	for i in range(k):
 		new_centroid = [0]*no_of_book
-		#loog thru each user inside that cluster.
+		# loop thru each user inside that cluster.
 		user_size_in_each_cluster = len(cluster[i].user_list)
 		for j in range(no_of_book):			
 			for k in range(user_size_in_each_cluster):
@@ -87,8 +91,7 @@ def changeCentroid(cluster):
 				new_centroid[j] = new_centroid[j]/user_size_in_each_cluster
 			except:
 				new_centroid[j] = 0					
-		cluster[i].centroid = new_centroid
-	return cluster[0].centroid	
+		cluster[i].centroid = new_centroid	
 
 # defines how many(k) cluster to be populated
 def populateCluster(k):
@@ -99,4 +102,5 @@ def populateCluster(k):
 	for i in range(no_of_user):
 		closer_cluster_for_i_user = calculateSimilarities(data[i+1], cluster, k)
 		addUserToCluster((i+1), cluster, closer_cluster_for_i_user)
+	changeCentroid(cluster)
 	return cluster
