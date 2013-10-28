@@ -3,6 +3,7 @@ import PrepareData
 no_of_user = 10
 no_of_book = 5
 user, book, data = PrepareData.prepareData(no_of_user, no_of_book)
+
 # flag for keeping track of centroid change
 centroid_change_flag = 1 # 1 for centroid changing, 0 for centroid not changing
 class Cluster:
@@ -73,34 +74,60 @@ def addUserToCluster(user_id, cluster, close_cluster):
 
 # change the centroid of each cluster so that it is the mean of each cluster
 # return the mean centroid for each cluster
-def changeCentroid(cluster):
+def changeCentroid(cluster, k):
 	global centroid_change_flag
-	k = len(cluster)
-	
+	before_change = {}
+	for i in range(k):
+		before_change[i] = cluster[i].centroid
 	# loop thru each cluster
 	for i in range(k):
 		new_centroid = [0]*no_of_book
 		# loop thru each user inside that cluster.
 		user_size_in_each_cluster = len(cluster[i].user_list)
 		for j in range(no_of_book):			
-			for k in range(user_size_in_each_cluster):
-				new_centroid[j] = new_centroid[j] + data[cluster[i].user_list[k]][j]
+			for l in range(user_size_in_each_cluster):
+				new_centroid[j] = new_centroid[j] + data[cluster[i].user_list[l]][j]
 			# if bychance there is no user in cluster during intermediate process
 			# the centroid is updated to [0,0,0,0,0,0.........]
 			try:				
 				new_centroid[j] = new_centroid[j]/user_size_in_each_cluster
 			except:
-				new_centroid[j] = 0					
+				new_centroid[j] = 0
 		cluster[i].centroid = new_centroid	
 
-# defines how many(k) cluster to be populated
-def populateCluster(k):
+	after_change = {}
+	for i in range(k):
+		after_change[i] = cluster[i].centroid	
+
+	#check if centroid has been changed or not
+	cnt = 0
+	for i in range(k):
+		if before_change[i] == after_change[i]:
+			cnt += 1
+	if cnt == k: centroid_change_flag = 0 # unchanged
+	else: centroid_change_flag = 1 # changed	
+
+def emptyUserListFromCluster(cluster, k):
+	for i in range(k):
+		cluster[i].user_list = []
+# k-mean return cluster with respective users.
+def kMean(k):
 	# step1 : initialize the k cluster
 	rand_user, cluster = initCluster(k, no_of_user)
-	# calculate the distance between each users and randome generated centroid and place the user
+	# step2: calculate the distance between each users and randome generated centroid and place the user
 	# to its respective cluster
-	for i in range(no_of_user):
-		closer_cluster_for_i_user = calculateSimilarities(data[i+1], cluster, k)
-		addUserToCluster((i+1), cluster, closer_cluster_for_i_user)
-	changeCentroid(cluster)
+	while centroid_change_flag:
+		for i in range(no_of_user):
+			# step3: find cluster closure to the user
+			closer_cluster_for_i_user = calculateSimilarities(data[i+1], cluster, k)
+			#add user to that cluster
+			addUserToCluster((i+1), cluster, closer_cluster_for_i_user)
+		# step4: change the centroid of cluster
+		changeCentroid(cluster, k)
+		for i in range(k):
+			print ("iteration\nuser_list",i, cluster[i].user_list)
+		if centroid_change_flag == 1:
+			emptyUserListFromCluster(cluster, k)
+		
 	return cluster
+		

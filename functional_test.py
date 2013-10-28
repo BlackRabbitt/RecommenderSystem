@@ -91,11 +91,11 @@ class test_euclideanDistance(unittest.TestCase):
 		#populate the cluster with the existing data sets.
 		#should return [cluster] of lenght equals k
 		k = 3
-		cluster = populateCluster(k)
+		cluster= kMean(k)
 		self.assertEqual(len(cluster), k)
+		for i in range(3):
+			print("cluster no:", cluster[i].cluster_no, "\tuser-list:", cluster[i].user_list, "\tcentroid:", cluster[i].centroid, "\n")
 
-	def test_if_centroid_is_a_mean_for_each_cluster(self):
-		cluster = populateCluster(3)
-		centroid1 = changeCentroid(cluster)
-		#self.assertEqual(len(centroid1), 5)	
+
+	
 		
