@@ -86,3 +86,16 @@ class test_euclideanDistance(unittest.TestCase):
 		#add again the same user, and the size will not increase.
 		addUserToCluster(user_id, cluster, close_cluster)
 		self.assertEqual(len(cluster[close_cluster].user_list), 2)
+	
+	def test_add_each_user_from_data_to_its_respective_cluster(self):
+		#populate the cluster with the existing data sets.
+		#should return [cluster] of lenght equals k
+		k = 3
+		cluster = populateCluster(k)
+		self.assertEqual(len(cluster), k)
+
+	def test_if_centroid_is_a_mean_for_each_cluster(self):
+		cluster = populateCluster(3)
+		centroid1 = changeCentroid(cluster)
+		self.assertEqual(len(centroid1), 5)	
+		
