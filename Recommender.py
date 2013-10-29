@@ -4,6 +4,7 @@ no_of_user = 10
 no_of_book = 5
 user, book, data = PrepareData.prepareData(no_of_user, no_of_book)
 
+#K-mean algorithm :
 # flag for keeping track of centroid change
 centroid_change_flag = 1 # 1 for centroid changing, 0 for centroid not changing
 class Cluster:
@@ -49,7 +50,7 @@ def euclideanDistance(user_centroid, cluster_centroid):
 # parameter-1: user_centroid = ratings of user.
 # parameter-2: cluster = all the clusters.
 # parameter-3: k = no. of clusters.
-# return: cluster_no. closer to the user
+# return: cluster_no. closer to the user and the cluster as a whole.
 def calculateSimilarities(user_centroid, cluster, k):
 	dist = {}
 	# calculate and save the distance between user and each cluster in dist(dictionary)
@@ -59,7 +60,6 @@ def calculateSimilarities(user_centroid, cluster, k):
 	# find closure cluster to the user.
 	closer_cluster = min(dist, key=dist.get)
 	return closer_cluster
-
 # add user to its closest cluster.
 # parameter-1: user_id = id of the user to be added in the closest cluster
 # parameter-2: cluster = cluster
@@ -110,6 +110,7 @@ def changeCentroid(cluster, k):
 def emptyUserListFromCluster(cluster, k):
 	for i in range(k):
 		cluster[i].user_list = []
+		
 # k-mean return cluster with respective users.
 def kMean(k):
 	# step1 : initialize the k cluster
@@ -127,7 +128,20 @@ def kMean(k):
 		for i in range(k):
 			print ("iteration\nuser_list",i, cluster[i].user_list)
 		if centroid_change_flag == 1:
-			emptyUserListFromCluster(cluster, k)
-		
+			emptyUserListFromCluster(cluster, k)		
 	return cluster
-		
+
+# End K-mean Clustering
+
+# Traditional Collaborative Filtering.
+# parameter-1: new_user = new user for whom cf is done.
+def collaborativeFiltering(new_user, k):
+	# get the key and ratings of new user
+	user_key = list(new_user)[0]
+	user_ratings = new_user[user_key]
+	# use k-mean to form the clusters of existing user
+	cluster = kMean(k)
+	# find the closest cluster to the user
+	cluster_no = calculateSimilarities(user_ratings, cluster, k)
+	# find the recommended ratings for the user w.r.t each and every user in the cluster
+	

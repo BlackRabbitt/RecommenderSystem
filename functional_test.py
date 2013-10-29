@@ -51,7 +51,7 @@ class test_cluster(unittest.TestCase):
 		centroid_obj = Cluster(1, init_user[1])
 		self.assertEqual(cluster[1].centroid, centroid_obj.centroid)
 
-class test_euclideanDistance(unittest.TestCase):
+class test_kmean(unittest.TestCase):
 	def test_if_distance_is_equal_with_calculated_distance(self):
 		user_centroid = [1, 0, 2, 3, 0]
 		cluster_centroid = [3, 2, 5, 1, 3]
@@ -97,5 +97,9 @@ class test_euclideanDistance(unittest.TestCase):
 			print("cluster no:", cluster[i].cluster_no, "\tuser-list:", cluster[i].user_list, "\tcentroid:", cluster[i].centroid, "\n")
 
 
-	
+class test_cf(unittest.TestCase):
+	def test_collaborative_filtering(self):
+		k = 3
+		new_user = {100:[1,3,2,0,5]}
+		returned_value = collaborativeFiltering(new_user, k)
 		
