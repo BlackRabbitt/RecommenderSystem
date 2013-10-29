@@ -100,6 +100,8 @@ class test_kmean(unittest.TestCase):
 class test_cf(unittest.TestCase):
 	def test_collaborative_filtering(self):
 		k = 3
-		new_user = {100:[1,3,2,0,5]}
-		returned_value = collaborativeFiltering(new_user, k)
+		new_user = {100:[0,0,2,0,5]}
+		returned_value = collaborativeFiltering(new_user, k, 3)
+		print ("recommendation",returned_value)
+		self.assertEqual(len(returned_value), 3)
 		
