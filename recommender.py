@@ -4,12 +4,14 @@ from CollaborativeFiltering import *
 #generate random new user
 rate = []
 new_user = {}
-for j in range(500):
-	rate.append(random.randint(0,5))
+no_of_item = 1682
+ratings = 5
+for j in range(no_of_item):
+	rate.append(random.randint(0,ratings))
 
-new_user[9292] = rate
+new_user[1000] = rate
 
-k = 5
+k = 4
 n = 5
 #clustering is done
 cluster = kMean(k)

@@ -2,12 +2,12 @@
 # Author: Sujit Shakya
 # @BlackRabbitt$
 import random, math
-import PrepareData
+import dataAPI
 
 # no_of_user = no of total user returned from PrepareData funtion
-# no_of_book = no of total book returned from PrepareData funtion
+# no_of_item = no of total book returned from PrepareData funtion
 # data = prepared data.
-no_of_user, no_of_book, data = PrepareData.prepareData()
+data, no_of_user, no_of_item = dataAPI.prepareData()
 
 # K-mean algorithm :
 # flag for keeping track of centroid change
@@ -86,10 +86,10 @@ def changeCentroid(cluster, k):
 		before_change[i] = cluster[i].centroid
 	# loop thru each cluster
 	for i in range(k):
-		new_centroid = [0]*no_of_book
+		new_centroid = [0]*no_of_item
 		# loop thru each user inside that cluster.
 		user_size_in_each_cluster = len(cluster[i].user_list)
-		for j in range(no_of_book):			
+		for j in range(no_of_item):			
 			for l in range(user_size_in_each_cluster):
 				new_centroid[j] = new_centroid[j] + data[cluster[i].user_list[l]][j]
 			# if bychance there is no user in cluster during intermediate process

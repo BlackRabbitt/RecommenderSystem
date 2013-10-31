@@ -1,5 +1,5 @@
 import random, math
-import PrepareData
+import dataAPI
 from KMean import *
 
 # Traditional Collaborative Filtering.
@@ -19,16 +19,16 @@ def collaborativeFiltering(new_user, k, cluster, n):
 	# format of recommended_ratings : {book1: rating1, book2: rating2, .... , bookn: ratingn}
 	recommended_ratings = {}
 	# initially the recommende ratings for each book is zero
-	for i in range(no_of_book):
+	for i in range(no_of_item):
 		recommended_ratings[i] = 0
 	# calculate the ratings for user
 	for i in range(len(cluster_user_list)):
-		for j in range(no_of_book):
+		for j in range(no_of_item):
 			recommended_ratings[j] = recommended_ratings[j] + (data[cluster_user_list[i]][j] * euclideanDistance(user_ratings, data[cluster_user_list[i]]) )
 
 	# get the position of value 0 in user_ratings.
 	pos_0_ratings = []
-	for i in range(no_of_book):
+	for i in range(no_of_item):
 		if user_ratings[i] == 0:
 			pos_0_ratings.append(i)
 
