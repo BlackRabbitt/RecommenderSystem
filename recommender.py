@@ -1,6 +1,6 @@
 from KMean import *
 from CollaborativeFiltering import *
-
+from dataAPI import getItemName
 #generate random new user
 rate = []
 new_user = {}
@@ -17,5 +17,6 @@ n = 5
 cluster = kMean(k)
 #collaborative filtering is done.
 recommendation = collaborativeFiltering(new_user, k, cluster, n)
-
-print (recommendation)
+print("Recommended Books are:\n")
+for i in range(n):
+	print (i+1,":",getItemName(recommendation[i]))
