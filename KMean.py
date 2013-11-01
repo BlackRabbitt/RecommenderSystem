@@ -8,7 +8,6 @@ import dataAPI
 # no_of_item = no of total book returned from PrepareData funtion
 # data = prepared data.
 data, no_of_user, no_of_item = dataAPI.prepareData()
-
 # K-mean algorithm :
 # flag for keeping track of centroid change
 centroid_change_flag = 1 # 1 for centroid changing, 0 for centroid not changing
