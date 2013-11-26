@@ -25,4 +25,3 @@ def test_for_get_item(self):
 item_name = getItemName(0)
 self.assertEqual('Toy Story (1995)', item_name)
 '''
-for_ratings()

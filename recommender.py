@@ -32,7 +32,7 @@ def recommend():
 	start_time = time.time()
 	recommendation = collaborativeFiltering(new_user, k, cluster, n)
 	print ("\nRecommendation, Total Time Elapsed: ", time.time()-start_time, "secs\n")
-	print("Recommended Books are:\n")
+	print("Recommended Movies are:\n")
 	for i in range(n):
 		print (i+1,":",getItemName(recommendation[i]))
 	
