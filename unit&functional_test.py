@@ -1,5 +1,5 @@
 from dataAPI import *
-import pandas as pd 
+import pandas as pd
 import unittest
 import time
 #class TestData(unittest.TestCase):
@@ -13,8 +13,9 @@ import time
 # dataset for user-rate-item
 # data = {user_id:[item#1_rating, item#2_rating, ...., item#3_rating]}
 def for_ratings():
-	data, a ,b = prepareData()
-	print (data)
+    data, a, b = prepareData()
+    print(data)
+
 #self.assertEqual(196, ratings.user_id[0])
 #self.assertEqual(100000, len(ratings))
 #self.assertEqual(943, len(data))

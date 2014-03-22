@@ -3,3 +3,47 @@
 1	3	1	881250949
 2	2	4	881250949
 4	0	3	234432424
+
+#k=2
+calculate weights for twentyNumbers [ 24 ]:  40342.6667321
+calculate weights for twentyNumbers [ 395 ]:  10181.4427562
+calculate weights for twentyNumbers [ 212 ]:  26434.0488559
+calculate weights for twentyNumbers [ 55 ]:  80969.9342549
+calculate weights for twentyNumbers [ 1 ]:  30360.2266787
+calculate weights for twentyNumbers [ 113 ]:  16037.9403657
+calculate weights for twentyNumbers [ 664 ]:  17591.8995746
+calculate weights for twentyNumbers [ 6 ]:  60577.7275416
+calculate weights for twentyNumbers [ 682 ]:  2664.01031875
+calculate weights for twentyNumbers [ 890 ]:  13.2287565553
+calculate weights for twentyNumbers [ 32 ]:  21881.9153505
+calculate weights for twentyNumbers [ 435 ]:  21983.5150602
+calculate weights for twentyNumbers [ 570 ]:  5296.2828599
+calculate weights for twentyNumbers [ 820 ]:  4368.24347836
+calculate weights for twentyNumbers [ 549 ]:  34292.4605888
+calculate weights for twentyNumbers [ 341 ]:  4454.06797894
+calculate weights for twentyNumbers [ 655 ]:  8896.2272481
+calculate weights for twentyNumbers [ 796 ]:  6526.4517547
+calculate weights for twentyNumbers [ 554 ]:  1376.60817972
+calculate weights for twentyNumbers [ 16 ]:  18071.7774643
+
+#k=3
+calculate weights for twentyNumbers [ 24 ]:  24199.0138281
+calculate weights for twentyNumbers [ 395 ]:  8256.91707671
+calculate weights for twentyNumbers [ 212 ]:  13422.7715403
+calculate weights for twentyNumbers [ 55 ]:  39442.1316408
+calculate weights for twentyNumbers [ 1 ]:  17775.3647565
+calculate weights for twentyNumbers [ 113 ]:  9244.99097987
+calculate weights for twentyNumbers [ 664 ]:  11455.3075659
+calculate weights for twentyNumbers [ 6 ]:  31435.5298967
+calculate weights for twentyNumbers [ 682 ]:  2262.01064846
+calculate weights for twentyNumbers [ 890 ]:  13.2287565553
+calculate weights for twentyNumbers [ 32 ]:  14162.6202202
+calculate weights for twentyNumbers [ 435 ]:  14982.6992214
+calculate weights for twentyNumbers [ 570 ]:  4477.71022713
+calculate weights for twentyNumbers [ 820 ]:  2733.76060021
+calculate weights for twentyNumbers [ 549 ]:  22296.1402729
+calculate weights for twentyNumbers [ 341 ]:  3794.73346198
+calculate weights for twentyNumbers [ 655 ]:  4261.83400847
+calculate weights for twentyNumbers [ 796 ]:  4775.59051507
+calculate weights for twentyNumbers [ 554 ]:  1376.60817972
+calculate weights for twentyNumbers [ 16 ]:  11269.8593068
