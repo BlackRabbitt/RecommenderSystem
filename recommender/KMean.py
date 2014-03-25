@@ -1,13 +1,15 @@
 # Recommender System
 # Author: Sujit Shakya
-# @BlackRabbitt$
-import random, math
-import dataAPI
+import random
+import math
 
-# no_of_user = no of total user returned from PrepareData funtion
+# no_of_users = no of total user returned from PrepareData funtion
 # no_of_item = no of total book returned from PrepareData funtion
 # data = prepared data.
-data, no_of_user, no_of_item = dataAPI.prepareData("dataset/u.data")
+from recommender import dataAPI
+from recommender import no_of_users, no_of_items, trainingData
+
+data = dataAPI.prepareData(trainingData)
 # K-mean algorithm :
 # flag for keeping track of centroid change
 centroid_change_flag = 1  # 1 for centroid changing, 0 for centroid not changing
@@ -28,11 +30,11 @@ class Cluster:
         self.centroid = data[user_id]
 
 
-# Initialize the k cluster for no_of_user
+# Initialize the k cluster for no_of_users
 # return: initialized cluster with single user in each
-def initCluster(k, no_of_user):
+def initCluster(k, no_of_users):
     #Choose k random users
-    random_user = random.sample(range(1, no_of_user), k)
+    random_user = random.sample(range(1, no_of_users), k)
     init_cluster = [] * k
     #initialize k cluster
     for i in range(k):
@@ -51,9 +53,9 @@ def euclideanDistance(user_centroid, cluster_centroid):
     xi = user_centroid  #critics of user as a list
     yi = cluster_centroid
     for i in range(len(xi)):
-        summation = summation + (xi[i] - yi[i]) ** 2
-    E = math.sqrt(summation)
-    return E
+        summation += (xi[i] - yi[i]) ** 2
+    e = math.sqrt(summation)
+    return e
 
 
 # calculate the most similar cluster for a user
@@ -94,10 +96,10 @@ def changeCentroid(cluster, k):
         before_change[i] = cluster[i].centroid
     # loop thru each cluster
     for i in range(k):
-        new_centroid = [0] * no_of_item
+        new_centroid = [0] * no_of_items
         # loop thru each user inside that cluster.
         user_size_in_each_cluster = len(cluster[i].user_list)
-        for j in range(no_of_item):
+        for j in range(no_of_items):
             for l in range(user_size_in_each_cluster):
                 new_centroid[j] = new_centroid[j] + data[cluster[i].user_list[l]][j]
             # if bychance there is no user in cluster during intermediate process
@@ -132,11 +134,11 @@ def emptyUserListFromCluster(cluster, k):
 # k-mean return cluster with respective users.
 def kMean(k):
     # step1 : initialize the k cluster
-    rand_user, cluster = initCluster(k, no_of_user)
+    rand_user, cluster = initCluster(k, no_of_users)
     # step2: calculate the distance between each users and randome generated centroid and place the user
     # to its respective cluster
     while centroid_change_flag:
-        for i in range(no_of_user):
+        for i in range(no_of_users):
             # step3: find cluster closure to the user
             closer_cluster_for_i_user = calculateSimilarities(data[i + 1], cluster, k)
             #add user to that cluster

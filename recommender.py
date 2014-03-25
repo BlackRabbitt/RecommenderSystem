@@ -1,10 +1,12 @@
-from KMean import *
-from CollaborativeFiltering import *
-from dataAPI import *
 import time
 import threading
+
+from recommender.CollaborativeFiltering import *
 from dataset.testData import test_data
-#generate random new user
+from recommender import no_of_items
+from recommender.dataAPI import getItemName
+
+
 class myThread(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
@@ -18,7 +20,6 @@ class myThread(threading.Thread):
 def recommend(test=0):
     rate = []
     new_user = {}
-    no_of_item = 1682
     ratings = 5
     k = 3
     n = 10
@@ -32,7 +33,7 @@ def recommend(test=0):
     if test == 1:
         recommendation = collaborativeFiltering(test_data, k, cluster, n)
     else:
-        for j in range(no_of_item):
+        for j in range(no_of_items):
             rate.append(random.randint(0, ratings))
         new_user[1000] = rate
         recommendation = collaborativeFiltering(new_user, k, cluster, n)

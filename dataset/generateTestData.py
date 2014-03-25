@@ -1,6 +1,7 @@
-import random
 import pandas as pd
-from dataAPI import no_of_users, no_of_items
+
+from recommender.dataAPI import no_of_items
+
 
 if __name__ == '__main__' :
     inputFile = {0:"u1.base", 1:"u2.base", 2:"u3.base", 3:"u4.base", 4:"u5.base"}

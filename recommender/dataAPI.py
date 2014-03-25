@@ -1,18 +1,11 @@
 import pandas as pd
-import os
-from collections import defaultdict
-
-# PATH = "dataset"
-# os.chdir(PATH)
-no_of_users = 943
-no_of_items = 1682
-total_ratings = 100000
+from recommender import no_of_items, no_of_users, itemData
 
 # read each Item from u.item and convert it in appropriate format
 def readForItem():
     item = {}
     item_cols = ['item_id', 'item_name']
-    temp_item = pd.read_csv('dataset/u.item', sep='|', names=item_cols, usecols=range(2), encoding="ISO-8859-1")
+    temp_item = pd.read_csv(itemData , sep='|', names=item_cols, usecols=range(2), encoding="ISO-8859-1")
     # convert the format of item as {item_id:item_name}
     for i in range(len(temp_item)):
         item[temp_item.item_id[i] - 1] = temp_item.item_name[i]
@@ -22,7 +15,6 @@ def readForItem():
 # prepare data in appropriate format for the recommendation module. Either generate randomly or by any other means.
 # return no of user, no of book and prepared data
 def prepareData(inputFile, test=0):
-    ratings = {}
     data = {}
     if test == 1:
         data.update({1: [0] * no_of_items})
@@ -33,7 +25,7 @@ def prepareData(inputFile, test=0):
     ratings = pd.read_csv(inputFile, sep='\t', names=ratings_cols, usecols=range(3))
     for row in ratings.values:
         data[row[0]][row[1] - 1] = row[2]
-    return data, no_of_users, no_of_items
+    return data
 
 
 # input: item_id
