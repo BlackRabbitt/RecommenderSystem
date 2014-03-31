@@ -3,7 +3,7 @@ import threading
 
 from recommender.CollaborativeFiltering import *
 from dataset.testData import test_data
-from recommender import no_of_items
+from recommender import no_of_items, k, n
 from recommender.dataAPI import getItemName
 
 
@@ -21,8 +21,6 @@ def recommend(test=0):
     rate = []
     new_user = {}
     ratings = 5
-    k = 3
-    n = 10
     start_time = time.time()
     #clustering is done
     cluster = kMean(k)

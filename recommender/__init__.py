@@ -1,4 +1,6 @@
 author = 'sujit shakya'
+k = 7
+n = 10
 no_of_users = 943
 no_of_items = 1682
 total_ratings = 100000
