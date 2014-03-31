@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df54ce1d-579e-414c-b8c9-a25496290d73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/recommender/__init__.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/functional_test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/noClustering.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pytddmon.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/unit&amp;functional_test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/unit_test.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CollaborativeFiltering.py" afterPath="$PROJECT_DIR$/recommender/CollaborativeFiltering.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/KMean.py" afterPath="$PROJECT_DIR$/recommender/KMean.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dataAPI.py" afterPath="$PROJECT_DIR$/recommender/dataAPI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/generateTestData.py" afterPath="$PROJECT_DIR$/dataset/generateTestData.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recommender.py" afterPath="$PROJECT_DIR$/recommender.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TDD-Recommender.iws" />
@@ -26,8 +14,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/TDD-Recommender$recommender.coverage" NAME="recommender Coverage Results" MODIFIED="1395726542324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TDD-Recommender$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1395726457842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recommender" />
+    <SUITE FILE_PATH="coverage/TDD-Recommender$recommender.coverage" NAME="recommender Coverage Results" MODIFIED="1395726542324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TDD-Recommender$KMean.coverage" NAME="KMean Coverage Results" MODIFIED="1395319785763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TDD-Recommender$generateTestData.coverage" NAME="generateTestData Coverage Results" MODIFIED="1395332920964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
     <SUITE FILE_PATH="coverage/TDD-Recommender$dataAPI.coverage" NAME="dataAPI Coverage Results" MODIFIED="1395721325335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recommender" />
@@ -47,7 +35,7 @@
       <file leaf-file-name="recommender.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recommender.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.25714287" vertical-offset="0" max-vertical-offset="1152">
+            <state line="8" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1152">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -58,7 +46,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recommender/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="17" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+            <state line="5" column="17" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="270">
               <folding />
             </state>
           </provider>
@@ -67,10 +55,8 @@
       <file leaf-file-name="CollaborativeFiltering.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recommender/CollaborativeFiltering.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="32" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state line="10" column="32" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="936">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,10 +64,8 @@
       <file leaf-file-name="dataAPI.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recommender/dataAPI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="58" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="774">
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state line="1" column="58" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="774">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,10 +73,8 @@
       <file leaf-file-name="KMean.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recommender/KMean.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="40" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2844">
-              <folding>
-                <element signature="e#44#57#0" expanded="true" />
-              </folding>
+            <state line="11" column="40" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="2844">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,16 +170,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="TDD-Recommender" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TDD-Recommender" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RecommenderSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -404,6 +376,9 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -425,9 +400,6 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -527,7 +499,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25378788" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -535,12 +507,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -558,9 +530,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24583964" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.66887414" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -585,26 +557,20 @@
     <entry file="file://$PROJECT_DIR$/recommender/KMean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="47" selection-start="1936" selection-end="1936" vertical-scroll-proportion="0.0" vertical-offset="954" max-vertical-offset="2790">
-          <folding>
-            <element signature="e#44#57#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender/CollaborativeFiltering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="73" selection-start="1999" selection-end="1999" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="936">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/generateTestData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="486">
-          <folding />
-        </state>
+        <state line="13" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="486" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender.py">
@@ -619,9 +585,7 @@
     <entry file="file://$PROJECT_DIR$/recommender/KMean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="130" column="0" selection-start="4805" selection-end="4805" vertical-scroll-proportion="0.0" vertical-offset="2340" max-vertical-offset="2808">
-          <folding>
-            <element signature="e#44#57#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -641,17 +605,13 @@
     <entry file="file://$PROJECT_DIR$/recommender/CollaborativeFiltering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="73" selection-start="1999" selection-end="1999" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="972">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/generateTestData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="486">
-          <folding />
-        </state>
+        <state line="13" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="486" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender.py">
@@ -666,9 +626,7 @@
     <entry file="file://$PROJECT_DIR$/recommender/KMean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="127" column="0" selection-start="4747" selection-end="4747" vertical-scroll-proportion="0.0" vertical-offset="2286" max-vertical-offset="2790">
-          <folding>
-            <element signature="e#44#57#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -688,17 +646,13 @@
     <entry file="file://$PROJECT_DIR$/recommender/CollaborativeFiltering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="73" selection-start="1999" selection-end="1999" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="972">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/generateTestData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="486">
-          <folding />
-        </state>
+        <state line="13" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="486" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender.py">
@@ -726,9 +680,7 @@
     <entry file="file://$PROJECT_DIR$/recommender/CollaborativeFiltering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="0" selection-start="1960" selection-end="1960" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="972">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -740,9 +692,7 @@
     <entry file="file://$PROJECT_DIR$/recommender/KMean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="65" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2808">
-          <folding>
-            <element signature="e#44#57#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -777,9 +727,7 @@
     <entry file="file://$PROJECT_DIR$/recommender/CollaborativeFiltering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="4" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="846">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -798,9 +746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/generateTestData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="25" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
-          <folding />
-        </state>
+        <state line="4" column="25" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/u.info">
@@ -913,42 +859,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/generateTestData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="486">
-          <folding />
-        </state>
+        <state line="13" column="23" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="486" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender/KMean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="40" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2844">
-          <folding>
-            <element signature="e#44#57#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/testData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender/dataAPI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="58" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="774">
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender/CollaborativeFiltering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="32" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -961,7 +897,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recommender.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.25714287" vertical-offset="0" max-vertical-offset="1152">
+        <state line="8" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1152">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
