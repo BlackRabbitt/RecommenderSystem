@@ -1,5 +1,5 @@
 author = 'sujit shakya'
-k = 7
+k = 3
 n = 10
 no_of_users = 943
 no_of_items = 1682
