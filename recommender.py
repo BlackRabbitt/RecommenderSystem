@@ -1,11 +1,14 @@
 import time
 import threading
+import sys
 
-from recommender.CollaborativeFiltering import *
+from engine.CollaborativeFiltering import *
 from dataset.testData import test_data
-from recommender import no_of_items, k, n
-from recommender.dataAPI import getItemName
+from engine import no_of_items, k, n
+from scrub.dataAPI import getItemName
 
+user_name = input("Please Enter Your Name : ")
+new_user = {}
 
 class myThread(threading.Thread):
     def __init__(self):
@@ -13,36 +16,66 @@ class myThread(threading.Thread):
         self.checksum = 1
 
     def run(self):
-        recommend(1)
+        recommend()
         self.checksum = 0
 
 
-def recommend(test=0):
+def prepare():    
     rate = []
-    new_user = {}
+    userId = random.randint(101,999)
+    ####################################v1.2#############################
+    print("type <0> to skip the movie [havn't watched yet] or type <stop> to stop the ratings.")
+    stop = 0
+    for j in range(no_of_items):
+        if stop == 1:
+            break
+        print(getItemName(j+1))
+        while(1):
+            rating = input("rate: ")
+            if(rating):
+                if rating.lower() == 'stop':
+                    stop = 1
+                    break
+                if 0 <= int(rating) <= 5:
+                    rate.append(int(rating))
+                    break
+
+                else:
+                    print("invalid rating.")
+    
+    while(len(rate) < no_of_items):
+        rate.append(0)
+    new_user[userId] = rate 
+
+def readCluster():
+    with open('cluster.pkl', 'rb') as input:
+        cluster = pickle.load(input)
+        return cluster
+
+def recommend(test=0):
+    recommendation = {}
     ratings = 5
     start_time = time.time()
     #clustering is done
-    cluster = kMean(k)
-    cluster_time = time.time() - start_time
-
+    # kMean(k)
+    cluster = readCluster()
+    print("cluster Loaded")
     #collaborative filtering is done.
     start_time = time.time()
     if test == 1:
         recommendation = collaborativeFiltering(test_data, k, cluster, n)
     else:
-        for j in range(no_of_items):
-            rate.append(random.randint(0, ratings))
-        new_user[1000] = rate
-        recommendation = collaborativeFiltering(new_user, k, cluster, n)
-    print("\nClustering, Total Time Elapsed: ", cluster_time, "secs\n")
+        recommendation = collaborativeFiltering(new_user, k, cluster, n) #v1.2
     print("\nRecommendation, Total Time Elapsed: ", time.time() - start_time, "secs\n")
-    print("Recommended Movies are:\n")
+    print("Hello", user_name, " We recommend you following movies:\n")
 
-    for i in range(n):
-        print(i + 1, ":", '[', recommendation[i], ']', getItemName(recommendation[i]))
+    l=1
+    for j in reversed(recommendation):
+        print(l, ":", getItemName(j))
+        l+=1
 
 if __name__ == '__main__':
+    prepare()
     thread1 = myThread()
     thread1.start()
     x = 1
@@ -53,4 +86,4 @@ if __name__ == '__main__':
         x += 1
         if x == 170:
             x = 1
-        time.sleep(2)
+        time.sleep(60)

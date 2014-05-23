@@ -1,5 +1,5 @@
-from recommender.KMean import *
-from recommender import no_of_items
+from engine.KMean import *
+from engine import no_of_items
 
 # Traditional Collaborative Filtering.
 # parameter-1: new_user = new user for whom cf is done.

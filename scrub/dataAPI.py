@@ -1,5 +1,5 @@
 import pandas as pd
-from recommender import no_of_items, no_of_users, itemData
+from engine import no_of_items, no_of_users, itemData
 
 # read each Item from u.item and convert it in appropriate format
 def readForItem():

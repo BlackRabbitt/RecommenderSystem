@@ -2,12 +2,13 @@
 # Author: Sujit Shakya
 import random
 import math
+import pickle
 
 # no_of_users = no of total user returned from PrepareData funtion
 # no_of_item = no of total book returned from PrepareData funtion
 # data = prepared data.
-from recommender import dataAPI
-from recommender import no_of_users, no_of_items, trainingData
+from scrub import dataAPI
+from engine import no_of_users, no_of_items, trainingData
 
 data = dataAPI.prepareData(trainingData)
 # K-mean algorithm :
@@ -147,6 +148,11 @@ def kMean(k):
         changeCentroid(cluster, k)
         if centroid_change_flag == 1:
             emptyUserListFromCluster(cluster, k)
-    return cluster
+    # return cluster
+    save(cluster)
 
+def save(cluster):
+    file_name = "cluster.pkl"
+    with open('cluster.pkl', 'wb') as output:
+        pickle.dump(cluster, output, pickle.HIGHEST_PROTOCOL)
 # End K-mean Clustering
