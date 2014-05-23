@@ -16,7 +16,7 @@ class myThread(threading.Thread):
         self.checksum = 1
 
     def run(self):
-        recommend()
+        recommend(1)
         self.checksum = 0
 
 
@@ -74,7 +74,7 @@ def recommend(test=0):
         print(l, ":", getItemName(j))
         l+=1
 
-if __name__ == '__main__':
+def main():
     prepare()
     thread1 = myThread()
     thread1.start()
@@ -87,3 +87,7 @@ if __name__ == '__main__':
         if x == 170:
             x = 1
         time.sleep(60)
+
+if __name__ == '__main__':
+    main()
+    
