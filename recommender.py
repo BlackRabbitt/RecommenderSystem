@@ -59,23 +59,23 @@ def recommend(test=0):
     #clustering is done
     # kMean(k)
     cluster = readCluster()
-    print("cluster Loaded")
+    return cluster[1].user_list
     #collaborative filtering is done.
-    start_time = time.time()
-    if test == 1:
-        recommendation = collaborativeFiltering(test_data, k, cluster, n)
-    else:
-        recommendation = collaborativeFiltering(new_user, k, cluster, n) #v1.2
-    print("\nRecommendation, Total Time Elapsed: ", time.time() - start_time, "secs\n")
-    print("Hello", user_name, " We recommend you following movies:\n")
+    # start_time = time.time()
+    # if test == 1:
+    #     recommendation = collaborativeFiltering(test_data, k, cluster, n)
+    # else:
+    #     recommendation = collaborativeFiltering(new_user, k, cluster, n) #v1.2
+    # print("\nRecommendation, Total Time Elapsed: ", time.time() - start_time, "secs\n")
+    # print("Hello", user_name, " We recommend you following movies:\n")
 
-    l=1
-    for j in reversed(recommendation):
-        print(l, ":", getItemName(j))
-        l+=1
+    # l=1
+    # for j in reversed(recommendation):
+    #     print(l, ":", getItemName(j))
+    #     l+=1
 
 def main():
-    prepare()
+    # prepare()
     thread1 = myThread()
     thread1.start()
     x = 1
