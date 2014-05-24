@@ -126,7 +126,7 @@ def changeCentroid(cluster, k):
         centroid_change_flag = 1  # changed
 
 
-#delete all user from cluster during the intermediate process
+# delete all user from cluster during the intermediate process
 def emptyUserListFromCluster(cluster, k):
     for i in range(k):
         cluster[i].user_list = []
@@ -136,7 +136,7 @@ def emptyUserListFromCluster(cluster, k):
 def kMean(k):
     # step1 : initialize the k cluster
     rand_user, cluster = initCluster(k, no_of_users)
-    # step2: calculate the distance between each users and randome generated centroid and place the user
+    # step2: calculate the distance between each users and random generated centroid and place the user
     # to its respective cluster
     while centroid_change_flag:
         for i in range(no_of_users):

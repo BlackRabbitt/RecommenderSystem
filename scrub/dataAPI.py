@@ -5,7 +5,7 @@ from engine import no_of_items, no_of_users, itemData
 def readForItem():
     item = {}
     item_cols = ['item_id', 'item_name']
-    temp_item = pd.read_csv(itemData , sep='|', names=item_cols, usecols=range(2), encoding="ISO-8859-1")
+    temp_item = pd.read_csv(itemData, sep='|', names=item_cols, usecols=range(2), encoding="ISO-8859-1")
     # convert the format of item as {item_id:item_name}
     for i in range(len(temp_item)):
         item[temp_item.item_id[i] - 1] = temp_item.item_name[i]

@@ -11,7 +11,7 @@ PORT_NUMBER = 8080
 class myHandler(BaseHTTPRequestHandler):
     #Handler for the GET requests
     def do_GET(self):
-        user_list = recommend()
+        user_list = recommend(1)
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
@@ -19,25 +19,25 @@ class myHandler(BaseHTTPRequestHandler):
         return
 
     #Handler for the POST requests
-    def do_POST(self):
-        if self.path == "/send":
-            form = cgi.FieldStorage(
-                fp=self.rfile,
-                headers=self.headers,
-                environ={'REQUEST_METHOD': 'POST',
-                         'CONTENT_TYPE': self.headers['Content-Type'],
-                })
-
-            ############
-            user_list = main()
-            ############
-            self.send_response(200)
-            self.end_headers()
-            #self.wfile.write("Thanks %s !" % form["your_name"].value)
-            #########
-            self.wfile.write(user_list)
-            #########
-            return
+    # def do_POST(self):
+    #     if self.path == "/send":
+    #         form = cgi.FieldStorage(
+    #             fp=self.rfile,
+    #             headers=self.headers,
+    #             environ={'REQUEST_METHOD': 'POST',
+    #                      'CONTENT_TYPE': self.headers['Content-Type'],
+    #             })
+    #
+    #         ############
+    #         user_list = main()
+    #         ############
+    #         self.send_response(200)
+    #         self.end_headers()
+    #         #self.wfile.write("Thanks %s !" % form["your_name"].value)
+    #         #########
+    #         self.wfile.write(user_list)
+    #         #########
+    #         return
 
 
 try:
@@ -46,7 +46,7 @@ try:
     server = HTTPServer(('', PORT_NUMBER), myHandler)
     print('Started httpserver on port ', PORT_NUMBER)
 
-    #Wait forever for incoming htto requests
+    #Wait forever for incoming http requests
     server.serve_forever()
 
 except KeyboardInterrupt:
