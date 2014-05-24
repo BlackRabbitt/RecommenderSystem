@@ -1,14 +1,15 @@
 import time
 import threading
-import sys
 
 from engine.CollaborativeFiltering import *
 from dataset.testData import test_data
 from engine import no_of_items, k, n
 from scrub.dataAPI import getItemName
 
+
 user_name = input("Please Enter Your Name : ")
 new_user = {}
+
 
 class myThread(threading.Thread):
     def __init__(self):
@@ -20,19 +21,19 @@ class myThread(threading.Thread):
         self.checksum = 0
 
 
-def prepare():    
+def prepare():
     rate = []
-    userId = random.randint(101,999)
+    userId = random.randint(101, 999)
     ####################################v1.2#############################
     print("type <0> to skip the movie [havn't watched yet] or type <stop> to stop the ratings.")
     stop = 0
     for j in range(no_of_items):
         if stop == 1:
             break
-        print(getItemName(j+1))
-        while(1):
+        print(getItemName(j + 1))
+        while 1:
             rating = input("rate: ")
-            if(rating):
+            if rating:
                 if rating.lower() == 'stop':
                     stop = 1
                     break
@@ -42,15 +43,17 @@ def prepare():
 
                 else:
                     print("invalid rating.")
-    
-    while(len(rate) < no_of_items):
+
+    while len(rate) < no_of_items:
         rate.append(0)
-    new_user[userId] = rate 
+    new_user[userId] = rate
+
 
 def readCluster():
     with open('cluster.pkl', 'rb') as input:
         cluster = pickle.load(input)
         return cluster
+
 
 def recommend(test=0):
     recommendation = {}
@@ -65,14 +68,15 @@ def recommend(test=0):
     if test == 1:
         recommendation = collaborativeFiltering(test_data, k, cluster, n)
     else:
-        recommendation = collaborativeFiltering(new_user, k, cluster, n) #v1.2
+        recommendation = collaborativeFiltering(new_user, k, cluster, n)  #v1.2
     print("\nRecommendation, Total Time Elapsed: ", time.time() - start_time, "secs\n")
     print("Hello", user_name, " We recommend you following movies:\n")
 
-    l=1
+    l = 1
     for j in reversed(recommendation):
         print(l, ":", getItemName(j))
-        l+=1
+        l += 1
+
 
 def main():
     prepare()
@@ -88,6 +92,6 @@ def main():
             x = 1
         time.sleep(60)
 
+
 if __name__ == '__main__':
     main()
-    
