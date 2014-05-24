@@ -1,11 +1,10 @@
 import time
 import threading
-import sys
 
 from engine.CollaborativeFiltering import *
-from dataset.testData import test_data
-from engine import no_of_items, k, n
+from engine import no_of_items
 from scrub.dataAPI import getItemName
+
 
 user_name = input("Please Enter Your Name : ")
 new_user = {}
@@ -30,9 +29,9 @@ def prepare():
         if stop == 1:
             break
         print(getItemName(j+1))
-        while(1):
+        while 1:
             rating = input("rate: ")
-            if(rating):
+            if rating:
                 if rating.lower() == 'stop':
                     stop = 1
                     break
@@ -43,7 +42,7 @@ def prepare():
                 else:
                     print("invalid rating.")
     
-    while(len(rate) < no_of_items):
+    while len(rate) < no_of_items:
         rate.append(0)
     new_user[userId] = rate 
 
@@ -90,4 +89,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
