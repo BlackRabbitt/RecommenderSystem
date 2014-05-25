@@ -93,20 +93,6 @@ def recommend(test=0):
         recommendation = top5Movies(new_user, k, cluster)
 
     return recommendation
-    # collaborative filtering is done. ############v1.3 -> v1.4###########
-    # start_time = time.time()
-    # if test == 1:
-    #     recommendation = collaborativeFiltering(test_data, k, cluster, n)
-    # else:
-    #     recommendation = collaborativeFiltering(new_user, k, cluster, n) #v1.2
-    # print("\nRecommendation, Total Time Elapsed: ", time.time() - start_time, "secs\n")
-    # print("Hello", user_name, " We recommend you following movies:\n")
-    #
-    # l=1
-    # for j in reversed(recommendation):
-    #     print(l, ":", getItemName(j))
-    #     l+=1
-
 
 def main():
     # prepare()
