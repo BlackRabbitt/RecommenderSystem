@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import html
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import os
 from os import curdir, sep
@@ -40,9 +41,8 @@ class myHandler(BaseHTTPRequestHandler):
                     f = open(curdir + sep + self.path)
                     self.send_response(200)
                     self.send_header('Content-type', mimetype)
-                    print(type(f))
                     self.end_headers()
-                    self.wfile.write(f.read())
+                    self.wfile.write(f.read().encode('utf-8'))
                     f.close()
                 return
 
@@ -50,33 +50,42 @@ class myHandler(BaseHTTPRequestHandler):
             except IOError:
                 self.send_error(404, 'File Not Found: %s' % self.path)
 
-        # user_list = recommend(1)
-        # self.send_response(200)
-        # self.send_header('Content-type', 'text/html')
-        # self.end_headers()
-        # self.wfile.write(str(user_list).encode("utf-8"))
-        # return
+    #Handler for the POST requests
+    def do_POST(self):
+        rate = []
+        index = ["1", "2", "3", "4", "5" ,"6", "7", "8", "9", "10"]
+        if self.path == "/send":
+            form = cgi.FieldStorage(
+                fp=self.rfile,
+                headers=self.headers,
+                environ={'REQUEST_METHOD': 'POST',
+                         'CONTENT_TYPE': self.headers['Content-Type'],
+                })
 
-        #Handler for the POST requests
-        # def do_POST(self):
-        #     if self.path == "/send":
-        #         form = cgi.FieldStorage(
-        #             fp=self.rfile,
-        #             headers=self.headers,
-        #             environ={'REQUEST_METHOD': 'POST',
-        #                      'CONTENT_TYPE': self.headers['Content-Type'],
-        #             })
-        #
-        #         ############
-        #         user_list = main()
-        #         ############
-        #         self.send_response(200)
-        #         self.end_headers()
-        #         #self.wfile.write("Thanks %s !" % form["your_name"].value)
-        #         #########
-        #         self.wfile.write(user_list)
-        #         #########
-        #         return
+            ############
+            # user_list = main()
+            ############
+            print(type(form.getvalue("1"))) #string
+            for i in range(10):
+                if form.getvalue(index[i]):
+                    rate.append(int(form.getvalue(index[i])))
+                else:
+                    rate.append(0)
+            while len(rate) < 1682:
+                rate.append(0)
+
+
+            recommended_movies = recommend(rate)
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(str(recommended_movies).encode("utf-8"))
+            # print(type(form["your_name"].value))
+            # self.wfile.write(form["your_name"].value.encode('utf-8'))
+            # self.wfile.write(form.getvalue("your_name"))
+            #########
+            # self.wfile.write()
+            #########
+            return
 
 
 try:
