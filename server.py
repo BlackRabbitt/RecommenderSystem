@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from os import curdir, sep
-import cgi
+import cgi, json
 
 from recommender import recommend
 
@@ -75,7 +75,8 @@ class myHandler(BaseHTTPRequestHandler):
             recommended_movies = recommend(1, rate)
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(str(recommended_movies).encode("utf-8"))
+            # self.wfile.write(str(recommended_movies).encode("utf-8"))
+            self.wfile.write(recommended_movies.encode("utf-8"))
             return
 
 

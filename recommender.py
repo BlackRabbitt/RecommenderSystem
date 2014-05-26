@@ -2,6 +2,7 @@ from dataset.testData import test_data
 from engine.CollaborativeFiltering import *
 from engine import k
 from scrub.dataAPI import getItemName
+import json
 
 
 new_user = {}
@@ -49,4 +50,4 @@ def recommend(test, rate):
     else:
         recommendation = top5Movies(new_user, k, cluster)
 
-    return recommendation
+    return json.dumps(recommendation)
