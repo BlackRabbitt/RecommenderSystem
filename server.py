@@ -12,7 +12,6 @@ class myHandler(BaseHTTPRequestHandler):
     #Handler for the GET requests
     def do_GET(self):
         if self.path == "/":
-            chdir("../view/")
             self.path = "index.html"
 
             try:
@@ -37,7 +36,9 @@ class myHandler(BaseHTTPRequestHandler):
 
                 if sendReply:
                     #Open the static file requested and send it
+                    chdir("../view")
                     f = open(curdir + sep + self.path)
+                    chdir("../dataset")
                     self.send_response(200)
                     self.send_header('Content-type', mimetype)
                     self.end_headers()
