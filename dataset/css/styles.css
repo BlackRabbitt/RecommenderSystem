@@ -1,0 +1,19 @@
+div.img{
+	margin: 5px;
+	padding: 5px;
+	border: 0px solid;
+	height: auto;
+	width: auto;
+	float: left;
+	text-align: center;
+}
+
+div.img img{
+	display: inline;
+	margin: 5px;
+}
+
+div.name{
+
+	
+}
