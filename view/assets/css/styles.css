@@ -8,6 +8,16 @@ div.img{
 	text-align: center;
 }
 
+div.container{
+	margin: 5px;
+	padding: 5px;
+	border: 0px solid;
+	margin-left: 222px;
+	width: 800px;
+	float: left;
+	text-align: center;
+}
+
 div.img img{
 	display: inline;
 	margin: 5px;
@@ -18,8 +28,14 @@ input[type=submit]{
 	background-color: #348457;
 	padding: 10px 25px 10px 25px;
 	margin: 10px;
-	margin-top: 190px;
-	margin-left: -160px;
 	width: 290px;
 	height: 35px;	
+}
+
+h1{
+	font-size: 3em;
+}
+
+h3{
+	font-size: 1.5em;
 }
