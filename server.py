@@ -7,6 +7,7 @@ from recommender import recommend
 
 PORT_NUMBER = 8080
 
+
 # This class will handles any incoming request from the browser
 class myHandler(BaseHTTPRequestHandler):
     #Handler for the GET requests
