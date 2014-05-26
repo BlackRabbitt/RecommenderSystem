@@ -1,3 +1,4 @@
+from dataset.testData import test_data
 from engine.CollaborativeFiltering import *
 from engine import k
 from scrub.dataAPI import getItemName
@@ -5,6 +6,8 @@ from scrub.dataAPI import getItemName
 
 new_user = {}
 data = dataAPI.prepareData(trainingData)
+
+
 def readCluster():
     with open('cluster.pkl', 'rb') as input:
         cluster = pickle.load(input)
@@ -25,19 +28,25 @@ def top5Movies(new_user, k, cluster):
     recommended_movies = []
     for j in range(5):
         for m in range(no_of_items):
-            rating_of_closer_user = data[closer_user[j]][m]
-            if int(rating_of_closer_user) == 5:
-                recommended_movies.append(m + 1)
-                break
+            if m > 20:
+                rating_of_closer_user = data[closer_user[j]][m]
+                if int(rating_of_closer_user) == 5:
+                    recommended_movies.append(m + 1)
+                    break
+
     recommended_movies_name = []
     for each_movie_id in recommended_movies:
         recommended_movies_name.append(getItemName(each_movie_id))
     return recommended_movies_name
 
-def recommend(rate):
+
+def recommend(test, rate):
     cluster = readCluster()
     userId = random.randint(101, 999)
     new_user[userId] = rate
-    recommendation = top5Movies(new_user, k, cluster)
+    if test == 1:
+        recommendation = top5Movies(test_data, k, cluster)
+    else:
+        recommendation = top5Movies(new_user, k, cluster)
 
     return recommendation

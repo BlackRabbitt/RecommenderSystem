@@ -51,7 +51,10 @@ class myHandler(BaseHTTPRequestHandler):
     #Handler for the POST requests
     def do_POST(self):
         rate = []
-        index = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+        index = []
+        index_range = 20
+        for i in range(index_range):
+            index.append(str(i+1))
         if self.path == "/send":
             form = cgi.FieldStorage(
                 fp=self.rfile,
@@ -60,8 +63,8 @@ class myHandler(BaseHTTPRequestHandler):
                          'CONTENT_TYPE': self.headers['Content-Type'],
                 })
 
-            print(type(form.getvalue("1")))  #string
-            for i in range(10):
+            # print(type(form.getvalue("1")))  #string
+            for i in range(index_range):
                 if form.getvalue(index[i]):
                     rate.append(int(form.getvalue(index[i])))
                 else:
@@ -69,7 +72,7 @@ class myHandler(BaseHTTPRequestHandler):
             while len(rate) < 1682:
                 rate.append(0)
 
-            recommended_movies = recommend(rate)
+            recommended_movies = recommend(1, rate)
             self.send_response(200)
             self.end_headers()
             self.wfile.write(str(recommended_movies).encode("utf-8"))
