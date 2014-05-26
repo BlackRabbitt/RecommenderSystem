@@ -15,40 +15,47 @@ class myHandler(BaseHTTPRequestHandler):
         if self.path == "/":
             self.path = "index.html"
 
-            try:
-                #Check the file extension required and
-                #set the right mime type
-                sendReply = False
-                if self.path.endswith(".html"):
-                    mimetype = 'text/html'
-                    sendReply = True
-                if self.path.endswith(".jpg"):
-                    mimetype = 'image/jpg'
-                    sendReply = True
-                if self.path.endswith(".gif"):
-                    mimetype = 'image/gif'
-                    sendReply = True
-                if self.path.endswith(".js"):
-                    mimetype = 'application/javascript'
-                    sendReply = True
-                if self.path.endswith(".css"):
-                    mimetype = 'text/css'
-                    sendReply = True
+        try:
+            #Check the file extension required and
+            #set the right mime type
+            sendReply = False
+            if self.path.endswith(".html"):
+                mimetype = 'text/html'
+                sendReply = True
+            if self.path.endswith(".jpg"):
+                chdir("../view")
+                mimetype = 'image/jpg'
+                img = open(curdir + sep + self.path, 'rb').read()
+                self.send_response(200)
+                self.send_header('Content-type', mimetype)
+                self.end_headers()
+                self.wfile.write(img)
+                chdir("../dataset")
 
-                if sendReply:
-                    #Open the static file requested and send it
-                    chdir("../view")
-                    f = open(curdir + sep + self.path)
-                    chdir("../dataset")
-                    self.send_response(200)
-                    self.send_header('Content-type', mimetype)
-                    self.end_headers()
-                    self.wfile.write(f.read().encode('utf-8'))
-                    f.close()
-                return
+            if self.path.endswith(".gif"):
+                mimetype = 'image/gif'
+                sendReply = True
+            if self.path.endswith(".js"):
+                mimetype = 'application/javascript'
+                sendReply = True
+            if self.path.endswith(".css"):
+                mimetype = 'text/css'
+                sendReply = True
 
-            except IOError:
-                self.send_error(404, 'File Not Found: %s' % self.path)
+            if sendReply:
+                #Open the static file requested and send it
+                chdir("../view")
+                f = open(curdir + sep + self.path)
+                self.send_response(200)
+                self.send_header('Content-type', mimetype)
+                self.end_headers()
+                self.wfile.write(f.read().encode('utf-8'))
+                f.close()
+                chdir("../dataset")
+            return
+
+        except IOError:
+            self.send_error(404, 'File Not Found: %s' % self.path)
 
     #Handler for the POST requests
     def do_POST(self):
