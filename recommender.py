@@ -50,4 +50,4 @@ def recommend(test, rate):
     else:
         recommendation = top5Movies(new_user, k, cluster)
 
-    return recommendation
+    return json.dumps(recommendation)
