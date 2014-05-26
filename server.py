@@ -54,7 +54,7 @@ class myHandler(BaseHTTPRequestHandler):
         index = []
         index_range = 20
         for i in range(index_range):
-            index.append(str(i+1))
+            index.append(str(i + 1))
         if self.path == "/send":
             form = cgi.FieldStorage(
                 fp=self.rfile,
@@ -76,12 +76,6 @@ class myHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.end_headers()
             self.wfile.write(str(recommended_movies).encode("utf-8"))
-            # print(type(form["your_name"].value))
-            # self.wfile.write(form["your_name"].value.encode('utf-8'))
-            # self.wfile.write(form.getvalue("your_name"))
-            #########
-            # self.wfile.write()
-            #########
             return
 
 
