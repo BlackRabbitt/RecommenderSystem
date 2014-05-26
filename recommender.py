@@ -56,11 +56,6 @@ def readCluster():
 
 
 def recommend(test=0):
-    recommendation = {}
-    ratings = 5
-    start_time = time.time()
-    #clustering is done
-    # kMean(k)
     cluster = readCluster()
     print("cluster Loaded")
     #collaborative filtering is done.
@@ -85,7 +80,6 @@ def main():
     x = 1
     while thread1.checksum:
         b = "|" * x
-        #os.system('clear')
         print(b, end='\r')
         x += 1
         if x == 170:
