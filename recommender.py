@@ -1,14 +1,10 @@
-import time
-import threading
-from dataset.testData import test_data
-
 from engine.CollaborativeFiltering import *
-from engine import no_of_items, k, n
+from engine import k
 from scrub.dataAPI import getItemName
 
 
-# user_name = input("Please Enter Your Name : ")
 new_user = {}
+data = dataAPI.prepareData(trainingData)
 def readCluster():
     with open('cluster.pkl', 'rb') as input:
         cluster = pickle.load(input)
@@ -29,7 +25,7 @@ def top5Movies(new_user, k, cluster):
     recommended_movies = []
     for j in range(5):
         rating_of_closer_user = data[cluster[cluster_no].user_list[closer_user[j]]]
-        print(data[cluster[cluster_no].user_list[464]])
+        print(data[cluster[cluster_no].user_list[6]])
         print(closer_user[j], rating_of_closer_user)
         for i in range(len(rating_of_closer_user)):
             if int(rating_of_closer_user[i]) == 5:

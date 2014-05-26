@@ -1,15 +1,13 @@
 #!/usr/bin/python
-import html
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import os
 from os import curdir, sep
 import cgi
+
 from recommender import recommend
 
 PORT_NUMBER = 8080
 
-#This class will handles any incoming request from
-#the browser 
+# This class will handles any incoming request from the browser
 class myHandler(BaseHTTPRequestHandler):
     #Handler for the GET requests
     def do_GET(self):
@@ -36,7 +34,7 @@ class myHandler(BaseHTTPRequestHandler):
                     mimetype = 'text/css'
                     sendReply = True
 
-                if sendReply == True:
+                if sendReply:
                     #Open the static file requested and send it
                     f = open(curdir + sep + self.path)
                     self.send_response(200)
@@ -53,7 +51,7 @@ class myHandler(BaseHTTPRequestHandler):
     #Handler for the POST requests
     def do_POST(self):
         rate = []
-        index = ["1", "2", "3", "4", "5" ,"6", "7", "8", "9", "10"]
+        index = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
         if self.path == "/send":
             form = cgi.FieldStorage(
                 fp=self.rfile,
@@ -62,10 +60,7 @@ class myHandler(BaseHTTPRequestHandler):
                          'CONTENT_TYPE': self.headers['Content-Type'],
                 })
 
-            ############
-            # user_list = main()
-            ############
-            print(type(form.getvalue("1"))) #string
+            print(type(form.getvalue("1")))  #string
             for i in range(10):
                 if form.getvalue(index[i]):
                     rate.append(int(form.getvalue(index[i])))
@@ -74,6 +69,8 @@ class myHandler(BaseHTTPRequestHandler):
             while len(rate) < 1682:
                 rate.append(0)
 
+            print("rate:", rate)
+            print("length of rate", len(rate))
 
             recommended_movies = recommend(rate)
             self.send_response(200)
