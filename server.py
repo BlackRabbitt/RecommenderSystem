@@ -69,9 +69,6 @@ class myHandler(BaseHTTPRequestHandler):
             while len(rate) < 1682:
                 rate.append(0)
 
-            print("rate:", rate)
-            print("length of rate", len(rate))
-
             recommended_movies = recommend(rate)
             self.send_response(200)
             self.end_headers()

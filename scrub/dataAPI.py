@@ -13,7 +13,7 @@ def readForItem():
 
 
 # prepare data in appropriate format for the recommendation module. Either generate randomly or by any other means.
-# return no of user, no of book and prepared data
+# return no of user, no of book and prepared data ::: data[user_id][item_id] = 'rating'
 def prepareData(inputFile, test=0):
     data = {}
     if test == 1:
