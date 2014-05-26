@@ -19,15 +19,16 @@ def top5Movies(new_user, k, cluster):
     # get the key and ratings of new user
     user_key = list(new_user)[0]
     user_ratings = new_user[user_key]
+    n = 5
     # find the closest cluster to the user
     cluster_no = calculateSimilarities(user_ratings, cluster, k)
     user_list = cluster[cluster_no].user_list
     dist = {}
     for i in range(len(user_list)):
-        dist[i] = euclideanDistance(user_ratings, data[cluster[cluster_no].user_list[i]])
+        dist[i] = euclideanDistance(user_ratings, data[user_list[i]])
     closer_user = sorted(dist, key=dist.get)
     recommended_movies = []
-    for j in range(5):
+    for j in range(n):
         for m in range(no_of_items):
             if m > 20:
                 rating_of_closer_user = data[closer_user[j]][m]
