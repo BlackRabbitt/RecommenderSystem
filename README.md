@@ -1,8 +1,13 @@
 RecommenderSystem
 =================
+#Version 1.3
+Recommends list of movies for user.
 
-Use Clustering and traditional Collaborative filtering approach for the recommendation problem
-
+#Features
+User can interact with the program via Web interface, where user can rate 20 movie. User are allowed to rate from range 0 to 5 or can leave the field blank
+Based on this input ratings, program will calculate the recommendation for user.
+Recommendation is done with single stage: Clustering. Collaborative Filtering from v1.2 has been removed temporarily, instead the recommendation is done
+by 5 user similar with that user in same cluster.
 
 Dependencies
 ============
