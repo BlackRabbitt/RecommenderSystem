@@ -17,7 +17,7 @@ class myThread(threading.Thread):
         self.checksum = 1
 
     def run(self):
-        recommend(1)
+        recommend(0)
         self.checksum = 0
 
 
