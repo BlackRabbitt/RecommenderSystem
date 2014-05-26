@@ -106,8 +106,8 @@ def changeCentroid(cluster, k):
             # if bychance there is no user in cluster during intermediate process
             # the centroid is updated to [0,0,0,0,0,0.........]
             try:
-                new_centroid[j] = new_centroid[j] / user_size_in_each_cluster
-            except:
+                new_centroid[j] /= user_size_in_each_cluster
+            except ZeroDivisionError:
                 new_centroid[j] = 0
         cluster[i].centroid = new_centroid
 
@@ -151,8 +151,11 @@ def kMean(k):
     # return cluster
     save(cluster)
 
+
+# save cluster into a file as a serializable object.
 def save(cluster):
     file_name = "cluster.pkl"
     with open('cluster.pkl', 'wb') as output:
         pickle.dump(cluster, output, pickle.HIGHEST_PROTOCOL)
+
 # End K-mean Clustering

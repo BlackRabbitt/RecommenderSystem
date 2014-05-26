@@ -44,17 +44,13 @@ class myHandler(BaseHTTPRequestHandler):
                     f.close()
                 return
 
-
             except IOError:
                 self.send_error(404, 'File Not Found: %s' % self.path)
 
     #Handler for the POST requests
     def do_POST(self):
         rate = []
-        index = []
         index_range = 20
-        for i in range(index_range):
-            index.append(str(i + 1))
         if self.path == "/send":
             form = cgi.FieldStorage(
                 fp=self.rfile,
@@ -63,16 +59,15 @@ class myHandler(BaseHTTPRequestHandler):
                          'CONTENT_TYPE': self.headers['Content-Type'],
                 })
 
-            # print(type(form.getvalue("1")))  #string
             for i in range(index_range):
-                if form.getvalue(index[i]):
-                    rate.append(int(form.getvalue(index[i])))
+                if form.getvalue(str(i)):
+                    rate.append(int(form.getvalue(str(i))))
                 else:
                     rate.append(0)
             while len(rate) < 1682:
                 rate.append(0)
 
-            recommended_movies = recommend(0, rate)
+            recommended_movies = recommend(0, rate)  # test mode off = 0
             self.send_response(200)
             self.end_headers()
             self.wfile.write(recommended_movies.encode("utf-8"))
