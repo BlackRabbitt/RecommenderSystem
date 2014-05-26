@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df54ce1d-579e-414c-b8c9-a25496290d73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/angel.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/antonia_line.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/bebe.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/copy_cat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/dead_man_walking.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/dusk_dawn.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/four_rooms.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/french_twist.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/get_shorty.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/golden_eye.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/mighty_aphrodite.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/mr_holland.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/postino.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/richard.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/seven.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/shanghai_triad.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/toy_story.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/twelve_monkey.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/usal_suspects.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/img/white_ballon.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/assets/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/index.html" afterPath="$PROJECT_DIR$/view/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TDD-Recommender.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -13,6 +35,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/RecommenderSystem$server.coverage" NAME="server Coverage Results" MODIFIED="1401131947148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -74,19 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="server.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="43" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1656">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="35" selection-start="415" selection-end="415" vertical-scroll-proportion="0.38502672" vertical-offset="0" max-vertical-offset="13554">
+            <state line="48" column="0" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.60465115" vertical-offset="558" max-vertical-offset="1656">
               <folding />
             </state>
           </provider>
@@ -174,7 +190,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -185,7 +201,61 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RecommenderSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RecommenderSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RecommenderSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RecommenderSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RecommenderSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RecommenderSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RecommenderSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -206,7 +276,26 @@
       <recent name="$PROJECT_DIR$/recommenderSystem" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.server">
+    <configuration default="false" name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RecommenderSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -357,7 +446,14 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.server" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.server" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -410,13 +506,13 @@
     <frame x="39" y="-4" width="1327" height="772" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850242" sideWeight="0.49960968" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850242" sideWeight="0.49960968" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5526932" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5003903" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5983051" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.5974235" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="39" y="764" width="1327" height="772" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -473,12 +569,34 @@
     <MESSAGE value="Finished!" />
     <MESSAGE value="V2.0" />
     <MESSAGE value="interpreter settings added" />
-    <option name="LAST_COMMIT_MESSAGE" value="interpreter settings added" />
+    <MESSAGE value="image added" />
+    <option name="LAST_COMMIT_MESSAGE" value="image added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/recommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="43" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="1728">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="35" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="13644">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/recommender.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="42" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1062">
@@ -733,16 +851,16 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="43" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1656">
+        <state line="48" column="18" selection-start="3623" selection-end="3623" vertical-scroll-proportion="0.46712804" vertical-offset="594" max-vertical-offset="15930">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="415" selection-end="415" vertical-scroll-proportion="0.38502672" vertical-offset="0" max-vertical-offset="13554">
+        <state line="48" column="0" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.60465115" vertical-offset="558" max-vertical-offset="1656">
           <folding />
         </state>
       </provider>
