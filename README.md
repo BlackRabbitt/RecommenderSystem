@@ -1,8 +1,13 @@
 RecommenderSystem
 =================
+#Version 1.2
+Recommends list of movies either for user or for test data.
 
-Use Clustering and traditional Collaborative filtering approach for the recommendation problem
-
+#Features
+User can interact with the program via CUI interface, where user can rate each movie. User are allowed to rate from range 0 to 5 and
+when user wants program to stop asking for the ratings, he/she can "stop" the program with command <stop>.
+Based on this input ratings, program will calculate the recommendation for user.
+Recommendation is done on two phase: 1. Clustering, and 2. Collaborative Filtering.
 
 Dependencies
 ============
