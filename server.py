@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from os import curdir, sep
+from os import curdir, sep, chdir
 import cgi
 
 from recommender import recommend
@@ -12,6 +12,7 @@ class myHandler(BaseHTTPRequestHandler):
     #Handler for the GET requests
     def do_GET(self):
         if self.path == "/":
+            chdir("../view/")
             self.path = "index.html"
 
             try:
