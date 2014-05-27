@@ -1,1 +1,4 @@
 .idea/**
+__pycache__/**
+dataset/__pycache__/**
+recommender/__pycache__/**
