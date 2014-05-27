@@ -9,7 +9,7 @@ PORT_NUMBER = 8080
 
 
 # This class will handles any incoming request from the browser
-class myHandler(BaseHTTPRequestHandler):
+class Handler(BaseHTTPRequestHandler):
     #Handler for the GET requests
     def do_GET(self):
         if self.path == "/":
@@ -87,7 +87,7 @@ class myHandler(BaseHTTPRequestHandler):
 try:
     #Create a web server and define the handler to manage the
     #incoming request
-    server = HTTPServer(('', PORT_NUMBER), myHandler)
+    server = HTTPServer(('', PORT_NUMBER), Handler)
     print('Started httpserver on port ', PORT_NUMBER)
 
     #Wait forever for incoming http requests
