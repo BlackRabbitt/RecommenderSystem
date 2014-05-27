@@ -7,8 +7,8 @@ import pickle
 # no_of_users = no of total user returned from PrepareData funtion
 # no_of_item = no of total book returned from PrepareData funtion
 # data = prepared data.
-from scrub import dataAPI
-from engine import no_of_users, no_of_items, trainingData
+from back.engine import no_of_users, no_of_items, trainingData
+from back.scrub import dataAPI
 
 data = dataAPI.prepareData(trainingData)
 # K-mean algorithm :

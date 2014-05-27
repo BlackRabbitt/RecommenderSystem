@@ -5,7 +5,6 @@ no_of_users = 943
 no_of_items = 1682
 total_ratings = 100000
 import os
-os.chdir('dataset')
-print(os.getcwd())
+os.chdir('back/Resources/dataset')
 trainingData = "u.data"
 itemData = "u.item"
