@@ -1,1 +1,6 @@
-.idea/
+.idea/**
+__pycache__/**
+dataset/__pycache__/**
+engine/__pycache__/**
+scrub/__pycache__/**
+
