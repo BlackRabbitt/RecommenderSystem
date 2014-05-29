@@ -88,6 +88,7 @@ try:
     #Create a web server and define the handler to manage the
     #incoming request
     server = HTTPServer(('', PORT_NUMBER), Handler)
+    print(".......beetle developers.......")
     print('Started httpserver on port ', PORT_NUMBER)
 
     #Wait forever for incoming http requests
