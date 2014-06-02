@@ -1,6 +1,6 @@
 import pandas as pd
 
-from back.scrub.dataAPI import no_of_items
+from data.scrub.dataAPI import no_of_items
 
 
 if __name__ == '__main__' :

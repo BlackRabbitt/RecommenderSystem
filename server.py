@@ -24,14 +24,14 @@ class Handler(BaseHTTPRequestHandler):
                 mimetype = 'text/html'
                 sendReply = True
             if self.path.endswith(".jpg"):
-                chdir("../../../front/view")
+                chdir("../../front/view")
                 mimetype = 'image/jpg'
                 img = open(curdir + sep + self.path, 'rb').read()
                 self.send_response(200)
                 self.send_header('Content-type', mimetype)
                 self.end_headers()
                 self.wfile.write(img)
-                chdir("../../back/Resources/dataset")
+                chdir("../../data/dataset")
 
             if self.path.endswith(".gif"):
                 mimetype = 'image/gif'
@@ -45,14 +45,14 @@ class Handler(BaseHTTPRequestHandler):
 
             if sendReply:
                 # Open the static file requested and send it
-                chdir("../../../front/view")
+                chdir("../../front/view")
                 f = open(curdir + sep + self.path)
                 self.send_response(200)
                 self.send_header('Content-type', mimetype)
                 self.end_headers()
                 self.wfile.write(f.read().encode('utf-8'))
                 f.close()
-                chdir("../../back/Resources/dataset")
+                chdir("../../data/dataset")
             return
 
         except IOError:

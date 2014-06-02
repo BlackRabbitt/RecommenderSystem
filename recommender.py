@@ -1,9 +1,9 @@
 import json
 
-from back.Resources.dataset.testData import test_data
+from data.dataset.testData import test_data
 from back.engine.CollaborativeFiltering import *
 from back.engine import k
-from back.scrub.dataAPI import getItemName
+from data.scrub.dataAPI import getItemName
 
 
 new_user = {}
