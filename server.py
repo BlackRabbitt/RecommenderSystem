@@ -62,7 +62,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         rate = []
         index_range = 20
-        if self.path == "/send":
+        if self.path == "/recommend":
             form = cgi.FieldStorage(
                 fp=self.rfile,
                 headers=self.headers,
