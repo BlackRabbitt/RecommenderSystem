@@ -3,7 +3,9 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from os import curdir, sep, chdir
 import cgi
 
+from config.route import *
 from recommender import recommend
+
 
 PORT_NUMBER = 8080
 
@@ -12,12 +14,11 @@ PORT_NUMBER = 8080
 class Handler(BaseHTTPRequestHandler):
     #Handler for the GET requests
     def do_GET(self):
-        if self.path == "/":
-            self.path = "index.html"
+        self.path = Routes.checkUrl(self.path)
 
         try:
-            #Check the file extension required and
-            #set the right mime type
+            # Check the file extension required and
+            # set the right mime type
             sendReply = False
             if self.path.endswith(".html"):
                 mimetype = 'text/html'
