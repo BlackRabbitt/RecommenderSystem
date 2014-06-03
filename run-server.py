@@ -5,9 +5,11 @@ import cgi
 
 from config.route import *
 from recommender import recommend
+from config import PORT_NUMBER
 
 
-PORT_NUMBER = 8080
+VIEW_PATH = "front/view"
+ROOT_FROM_VIEW = "../../"
 
 
 # This class will handles any incoming request from the browser
@@ -24,15 +26,8 @@ class Handler(BaseHTTPRequestHandler):
                 mimetype = 'text/html'
                 sendReply = True
             if self.path.endswith(".jpg"):
-                chdir("../../front/view")
                 mimetype = 'image/jpg'
-                img = open(curdir + sep + self.path, 'rb').read()
-                self.send_response(200)
-                self.send_header('Content-type', mimetype)
-                self.end_headers()
-                self.wfile.write(img)
-                chdir("../../data/dataset")
-
+                sendReply = True
             if self.path.endswith(".gif"):
                 mimetype = 'image/gif'
                 sendReply = True
@@ -45,14 +40,13 @@ class Handler(BaseHTTPRequestHandler):
 
             if sendReply:
                 # Open the static file requested and send it
-                chdir("../../front/view")
-                f = open(curdir + sep + self.path)
+                chdir(VIEW_PATH)
+                f = open(curdir + sep + self.path, 'rb').read()
                 self.send_response(200)
                 self.send_header('Content-type', mimetype)
                 self.end_headers()
-                self.wfile.write(f.read().encode('utf-8'))
-                f.close()
-                chdir("../../data/dataset")
+                self.wfile.write(f)
+                chdir(ROOT_FROM_VIEW)
             return
 
         except IOError:

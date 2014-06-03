@@ -10,9 +10,10 @@ from config import test
 new_user = {}
 data = dataAPI.prepareData(trainingData)
 
+CLUSTER_PATH = "data/dataset/cluster.pkl"
 
 def readCluster():
-    with open('cluster.pkl', 'rb') as input:
+    with open(CLUSTER_PATH, 'rb') as input:
         cluster = pickle.load(input)
         return cluster
 
