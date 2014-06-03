@@ -3,4 +3,10 @@ __pycache__/**
 dataset/__pycache__/**
 engine/__pycache__/**
 scrub/__pycache__/**
-
+back/__pycache__/**
+back/engine/__pycache__/**
+back/url/__pycache__/**
+config/__pycache__/**
+data/__pycache__/**
+data/dataset/__pycache__/**
+data/scrub/__pycache__/**
