@@ -18,3 +18,8 @@ Dependencies
 3. sudo apt-get update
 4. sudo apt-get install python3-pandas
 
+#MongoDB
+
+1. sudo apt-get update
+2. sudo apt-get install mongodb
+3. pip3 install pymongo3

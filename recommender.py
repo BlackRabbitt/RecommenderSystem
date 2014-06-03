@@ -4,6 +4,7 @@ from data.dataset.testData import test_data
 from back.engine.CollaborativeFiltering import *
 from back.engine import k
 from data.scrub.dataAPI import getItemName
+from config import test
 
 
 new_user = {}
@@ -43,7 +44,7 @@ def top5Movies(new_user, k, cluster):
     return json.dumps(recommended_movies_name)
 
 
-def recommend(test, rate):
+def recommend(rate):
     cluster = readCluster()
     userId = random.randint(101, 999)
     new_user[userId] = rate

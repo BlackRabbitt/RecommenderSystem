@@ -78,7 +78,7 @@ class Handler(BaseHTTPRequestHandler):
             while len(rate) < 1682:
                 rate.append(0)
 
-            recommended_movies = recommend(0, rate)  # test mode off = 0
+            recommended_movies = recommend(rate)
             self.send_response(200)
             self.end_headers()
             self.wfile.write(recommended_movies.encode("utf-8"))
