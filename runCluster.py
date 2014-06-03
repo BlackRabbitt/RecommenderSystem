@@ -1,2 +1,5 @@
 from back.engine.KMean import kMean
-kMean(3)
+
+
+def run_cluster(k):
+    kMean(k)

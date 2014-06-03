@@ -6,3 +6,4 @@ no_of_items = 1682
 total_ratings = 100000
 trainingData = "data/dataset/u.data"
 itemData = "data/dataset/u.item"
+CLUSTER_NAME = "data/dataset/u.cluster"

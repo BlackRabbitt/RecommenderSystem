@@ -2,18 +2,18 @@ import json
 
 from data.dataset.testData import test_data
 from back.engine.CollaborativeFiltering import *
-from back.engine import k
+from back.engine import k, CLUSTER_NAME
 from data.scrub.dataAPI import getItemName
 from config import test
-
+from runCluster import run_cluster
 
 new_user = {}
 data = dataAPI.prepareData(trainingData)
 
-CLUSTER_PATH = "data/dataset/cluster.pkl"
+
 
 def readCluster():
-    with open(CLUSTER_PATH, 'rb') as input:
+    with open(CLUSTER_NAME, 'rb') as input:
         cluster = pickle.load(input)
         return cluster
 
@@ -46,7 +46,11 @@ def top5Movies(new_user, k, cluster):
 
 
 def recommend(rate):
-    cluster = readCluster()
+    try:
+        cluster = readCluster()
+    except FileNotFoundError:
+        run_cluster(k)
+        cluster = readCluster()
     userId = random.randint(101, 999)
     new_user[userId] = rate
     if test == 1:

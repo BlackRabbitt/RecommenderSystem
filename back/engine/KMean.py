@@ -7,7 +7,7 @@ import pickle
 # no_of_users = no of total user returned from PrepareData funtion
 # no_of_item = no of total book returned from PrepareData funtion
 # data = prepared data.
-from back.engine import no_of_users, no_of_items, trainingData
+from back.engine import no_of_users, no_of_items, trainingData, CLUSTER_NAME
 from data.scrub import dataAPI
 
 data = dataAPI.prepareData(trainingData)
@@ -154,8 +154,7 @@ def kMean(k):
 
 # save cluster into a file as a serializable object.
 def save(cluster):
-    file_name = "cluster.pkl"
-    with open('cluster.pkl', 'wb') as output:
+    with open(CLUSTER_NAME, 'wb') as output:
         pickle.dump(cluster, output, pickle.HIGHEST_PROTOCOL)
 
 # End K-mean Clustering
