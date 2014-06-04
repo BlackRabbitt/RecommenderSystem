@@ -11,7 +11,6 @@ new_user = {}
 data = dataAPI.prepareData(trainingData)
 
 
-
 def readCluster():
     with open(CLUSTER_NAME, 'rb') as input:
         cluster = pickle.load(input)
