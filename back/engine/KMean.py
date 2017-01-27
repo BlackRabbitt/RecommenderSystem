@@ -2,12 +2,13 @@
 # Author: Sujit Shakya
 import random
 import math
+import pickle
 
 # no_of_users = no of total user returned from PrepareData funtion
 # no_of_item = no of total book returned from PrepareData funtion
 # data = prepared data.
-from recommender import dataAPI
-from recommender import no_of_users, no_of_items, trainingData
+from back.engine import no_of_users, no_of_items, trainingData, CLUSTER_NAME
+from data.scrub import dataAPI
 
 data = dataAPI.prepareData(trainingData)
 # K-mean algorithm :
@@ -105,8 +106,8 @@ def changeCentroid(cluster, k):
             # if bychance there is no user in cluster during intermediate process
             # the centroid is updated to [0,0,0,0,0,0.........]
             try:
-                new_centroid[j] = new_centroid[j] / user_size_in_each_cluster
-            except:
+                new_centroid[j] /= user_size_in_each_cluster
+            except ZeroDivisionError:
                 new_centroid[j] = 0
         cluster[i].centroid = new_centroid
 
@@ -125,7 +126,7 @@ def changeCentroid(cluster, k):
         centroid_change_flag = 1  # changed
 
 
-#delete all user from cluster during the intermediate process
+# delete all user from cluster during the intermediate process
 def emptyUserListFromCluster(cluster, k):
     for i in range(k):
         cluster[i].user_list = []
@@ -135,7 +136,7 @@ def emptyUserListFromCluster(cluster, k):
 def kMean(k):
     # step1 : initialize the k cluster
     rand_user, cluster = initCluster(k, no_of_users)
-    # step2: calculate the distance between each users and randome generated centroid and place the user
+    # step2: calculate the distance between each users and random generated centroid and place the user
     # to its respective cluster
     while centroid_change_flag:
         for i in range(no_of_users):
@@ -147,6 +148,13 @@ def kMean(k):
         changeCentroid(cluster, k)
         if centroid_change_flag == 1:
             emptyUserListFromCluster(cluster, k)
-    return cluster
+    # return cluster
+    save(cluster)
+
+
+# save cluster into a file as a serializable object.
+def save(cluster):
+    with open(CLUSTER_NAME, 'wb') as output:
+        pickle.dump(cluster, output, pickle.HIGHEST_PROTOCOL)
 
 # End K-mean Clustering

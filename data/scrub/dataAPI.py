@@ -1,11 +1,13 @@
 import pandas as pd
-from recommender import no_of_items, no_of_users, itemData
+
+from back.engine import no_of_items, no_of_users, itemData
+
 
 # read each Item from u.item and convert it in appropriate format
 def readForItem():
     item = {}
     item_cols = ['item_id', 'item_name']
-    temp_item = pd.read_csv(itemData , sep='|', names=item_cols, usecols=range(2), encoding="ISO-8859-1")
+    temp_item = pd.read_csv(itemData, sep='|', names=item_cols, usecols=range(2), encoding="ISO-8859-1")
     # convert the format of item as {item_id:item_name}
     for i in range(len(temp_item)):
         item[temp_item.item_id[i] - 1] = temp_item.item_name[i]
@@ -13,7 +15,7 @@ def readForItem():
 
 
 # prepare data in appropriate format for the recommendation module. Either generate randomly or by any other means.
-# return no of user, no of book and prepared data
+# return no of user, no of book and prepared data ::: data[user_id][item_id] = 'rating'
 def prepareData(inputFile, test=0):
     data = {}
     if test == 1:
