@@ -1,6 +1,7 @@
 RecommenderSystem
 =================
-##Version 1.3
+[Recommender System.pdf](https://github.com/BlackRabbitt/RecommenderSystem/files/11360169/Recommender.System.pdf)
+
 Recommends list of movies for user.
 
 ###Features
@@ -23,3 +24,4 @@ Dependencies
 1. sudo apt-get update
 2. sudo apt-get install mongodb
 3. pip3 install pymongo3
+
